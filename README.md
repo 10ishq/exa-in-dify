@@ -26,19 +26,20 @@ By default, it automatically chooses between traditional keyword search and Exa'
 #### Parameters:
 
 - **query** (string, required): The search query to find relevant information on the web.
-- **search_type** (select, optional, default: "neural"): 
-  - Options: "neural" (semantic), "keyword" (traditional), "auto"
-  - Neural uses advanced AI for semantic understanding, keyword uses traditional search techniques
+- **search_type** (select, optional, default: "auto"): 
+  - Options: "auto", "fast", "instant", "deep"
+  - Auto is recommended for most queries
 - **num_results** (number, optional, default: 10): Maximum number of search results (1-100)
 - **include_domains** (string, optional): Comma-separated list of domains to include in results
 - **exclude_domains** (string, optional): Comma-separated list of domains to exclude from results
 - **start_published_date** (string, optional): Only include results published after this date (YYYY-MM-DD)
 - **end_published_date** (string, optional): Only include results published before this date (YYYY-MM-DD)
-- **use_autoprompt** (boolean, optional, default: true): Whether to use Exa's prompt engineering to improve the query
-- **text_contents** (boolean, optional, default: false): Whether to include text contents from each result
-- **highlight_results** (boolean, optional, default: false): Whether to highlight relevant snippets
+- **max_age_hours** (number, optional): Freshness control. 0 = always crawl, -1 = cache only, 24 = cache if less than 24h old
+- **include_highlights** (boolean, optional, default: true): Return query-relevant excerpts from each result
+- **highlights_max_characters** (number, optional): Maximum characters per highlight excerpt
+- **include_text** (boolean, optional, default: false): Return full page text (opt-in)
 - **category** (select, optional): Focus on specific data categories
-  - Options: "company", "research paper", "news", "pdf", "github", "tweet", "personal site", "linkedin profile", "financial report"
+  - Options: "company", "people", "research paper", "news", "personal site", "financial report"
 - **includeText** (string, optional): Text that must be present in results (up to 5 words)
 - **excludeText** (string, optional): Text that must not be present in results (up to 5 words)
 
@@ -77,11 +78,10 @@ Returns instant results from Exa's cache, with automatic live crawling as fallba
 #### Parameters:
 
 - **urls** (string, required): Comma-separated list of URLs to extract content from
-- **livecrawl** (select, optional, default: "never"):
-  - Options: "never", "fallback", "always", "auto"
-  - Choose the live crawling strategy for content retrieval
-- **full_page_text** (boolean, optional, default: false): Include the full text of each webpage, including subpages
-- **ai_page_summary** (boolean, optional, default: false): Generate a summary for each webpage using LLM
+- **max_age_hours** (number, optional): Freshness control. 0 = always crawl, -1 = cache only, 24 = cache if less than 24h old
+- **include_highlights** (boolean, optional, default: true): Return query-relevant excerpts from each page
+- **highlights_max_characters** (number, optional): Maximum characters per highlight excerpt
+- **full_page_text** (boolean, optional, default: false): Return full page text (opt-in)
 - **number_of_subpages** (number, optional, default: 1): Number of subpages to include in content extraction
 - **return_links** (number, optional, default: 1): Number of links to return from each webpage
 
