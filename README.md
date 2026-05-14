@@ -21,8 +21,6 @@ Exa is an AI-powered search tool that enables semantic search and content retrie
 
 The search endpoint lets you intelligently search the web and extract contents from the results.
 
-By default, it automatically chooses between traditional keyword search and Exa's embeddings-based model to find the most relevant results for your query.
-
 #### Parameters:
 
 - **query** (string, required): The search query to find relevant information on the web.
