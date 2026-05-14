@@ -11,7 +11,7 @@
 
 ### Description
 
-Exa is an AI-powered search tool that enables semantic search, content retrieval, similarity search, and answers generation using Exa's advanced API.
+Exa is an AI-powered search tool that enables semantic search and content retrieval using Exa's advanced API.
 
 ![Exa Logo](./_assets/image.png)
 
@@ -43,33 +43,7 @@ By default, it automatically chooses between traditional keyword search and Exa'
 - **includeText** (string, optional): Text that must be present in results (up to 5 words)
 - **excludeText** (string, optional): Text that must not be present in results (up to 5 words)
 
-### 2. Exa Answer (`exa_answer`)
-
-Get an LLM answer to a question informed by Exa search results. Fully compatible with OpenAI's chat completions endpoint.
-
-/answer performs an Exa search and uses an LLM (GPT-4o-mini) to generate either:
-- A direct answer for specific queries (i.e., "What is the capital of France?" would return "Paris")
-- A detailed summary with citations for open-ended queries (i.e., "What is the state of AI in healthcare?" would return a summary with citations to relevant sources)
-
-#### Parameters:
-
-- **query** (string, required): The question to be answered with supporting evidence from the web
-- **text** (boolean, optional, default: false): Include the full text content of each source in the results
-- **model** (select, optional, default: "exa"):
-  - Options: "exa", "exa-pro"
-  - Specify which model should process the query and generate the answer
-
-### 3. Exa Similar Links (`exa_similar`)
-
-Find similar links to the link provided and optionally return the contents of the pages.
-
-#### Parameters:
-
-- **url** (string, required): The source URL to find similar content for
-- **num_results** (number, optional, default: 10): Number of similar links to return (max 100)
-- **text** (boolean, optional, default: false): Include the full text content of each similar page
-
-### 4. Exa URL Contents (`exa_contents`)
+### 2. Exa URL Contents (`exa_contents`)
 
 Get the full page contents, summaries, and metadata for a list of URLs.
 
