@@ -25,21 +25,7 @@ class ExaContentsTool(Tool):
         return instance
     
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage, None, None]:
-        """
-        Execute a request to get content from URLs using the Exa API.
-        
-        Args:
-            tool_parameters: Dictionary containing:
-                - urls: List of URLs to fetch content from (required)
-                - livecrawl: Live crawling strategy (never/fallback/always/auto)
-                - full_page_text: Whether to include full webpage text
-                - ai_page_summary: Whether to include AI-generated summary
-                - number_of_subpages: Number of subpages to include
-                - return_links: Number of links to return
-        
-        Returns:
-            Generator yielding ToolInvokeMessage with content results
-        """
+        """Execute a request to get content from URLs using the Exa API."""
         try:
             # Get API key from runtime credentials
             api_key = self.runtime.credentials["exa_api_key"]
