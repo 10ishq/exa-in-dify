@@ -25,7 +25,7 @@ The search endpoint lets you intelligently search the web and extract contents f
 
 - **query** (string, required): The search query to find relevant information on the web.
 - **search_type** (select, optional, default: "auto"): 
-  - Options: "auto", "fast", "instant", "deep"
+  - Options: "auto", "fast", "deep"
   - Auto is recommended for most queries
 - **num_results** (number, optional, default: 10): Maximum number of search results (1-100)
 - **include_domains** (string, optional): Comma-separated list of domains to include in results
@@ -45,7 +45,7 @@ The search endpoint lets you intelligently search the web and extract contents f
 
 Get the full page contents, summaries, and metadata for a list of URLs.
 
-Returns instant results from Exa's cache, with automatic live crawling as fallback for uncached pages.
+Returns results from Exa's cache, with automatic live crawling as fallback for uncached pages.
 
 #### Parameters:
 

@@ -72,12 +72,6 @@ parameters:
           ja_JP: 高速
         value: fast
       - label:
-          en_US: Instant
-          zh_Hans: 即时
-          pt_BR: Instantâneo
-          ja_JP: インスタント
-        value: instant
-      - label:
           en_US: Deep
           zh_Hans: 深度
           pt_BR: Profundo
